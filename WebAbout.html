@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Healthcare Management System</title>
+    
+            <style>
+
+                /* General Body Styling */
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f4f8fb;
+                    color: #333;
+                    line-height: 1.6;
+                    background-image: url(l.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                /* About Section Styling */
+                
+                .about {
+                    background-color: rgba(202, 240, 240, 0.3); /* Semi-transparent background */
+                    border-radius: 10px;
+                    margin: 30px auto;
+                    max-width: 800px;
+                    padding: 20px;
+                    text-align: center;
+                    backdrop-filter: blur(15px) brightness(1.2); /* Frosted glass effect with brightness */
+                    -webkit-backdrop-filter: blur(15px) brightness(1.2); /* Frosted glass effect for Safari */
+                    color: #333; /* Text color for readability */
+                    font-family: 'Arial', sans-serif;
+                }
+
+                .about h2 {
+                    color: #2a7ca8; /* Bright, contrasting heading color */
+                    font-size: 2em;
+                    margin-bottom: 15px;
+                    font-weight: bold;
+                }
+
+                .about p {
+                    font-size: 1.2em;
+                    margin-bottom: 20px;
+                    text-align: justify;
+                }
+
+                .about strong {
+                    color: #2a7ca8;
+                    font-weight: bold;
+                }
+
+                /* Button Styling */
+                .button {
+                    display: inline-block;
+                    background-color: #2a7ca8;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    font-size: 1em;
+                    text-align: center;
+                    border: none;
+                }
+
+                .button:hover {
+                    background-color: green;
+                    transform: scale(1.05);
+                }
+                
+            </style>
+</head>
+<body>
+    <section class="about">
+        <h2>About Us</h2>
+        <p>
+            At <strong>HealthSys</strong>, we are committed to revolutionizing healthcare management by offering innovative digital solutions. Our platform is designed to simplify and enhance the healthcare experience for providers and patients alike.
+        </p>
+        <p>
+            With features like patient management, electronic health records, virtual prescriptions, and streamlined billing systems, we aim to improve efficiency and ensure seamless communication within the healthcare ecosystem.
+        </p>
+        <p>
+            Our mission is to empower healthcare providers with cutting-edge tools, enabling them to focus on what truly matters—delivering exceptional patient care.
+        </p>
+        <button class="button" onclick="about()">Back</button>
+    </section>
+
+    <script>
+        function about() {
+            window.location.href = "Healthcare Website.html";
+        }
+    </script>
+</body>
+</html>

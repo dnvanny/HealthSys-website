@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MedSys </title>
+    
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                html, body {
+                    overflow-x: hidden;
+                }
+                body {
+                    font-family: Arial, sans-serif;
+                    color: #333;
+                    background-color: #f4f4f4;
+                }
+                
+                /*This is the navigation bar section*/
+                
+                .navbar {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: #F3F3E0;
+                    color: #608BC1;
+                    padding: 10px 20px;
+                }
+
+                .navbar .logo-container {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .navbar .logo {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    margin-right: 10px;
+                }
+
+                #heart {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .navbar nav a.nav-btn, 
+                .navbar .login-btn {
+                    margin: 0 10px;
+                    padding: 8px 12px;
+                    background-color: #34495e;
+                    color: #6ae1ff;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    border-radius: 10px;
+                    font-weight: bold;
+     
+                }
+
+                .navbar nav a.nav-btn:hover {
+                    background-color: blue;
+                    color: wheat;
+                    border-color: #133E87;
+                    transform: scale(1.05);
+
+                }
+                .navbar .login-btn:hover {
+                    background-color: green;
+                    color: #fff;    
+                    transform: scale(1.05);
+
+                }
+                
+                /*This is where the Welcome Message Section*/
+
+                .title {
+                    background-color: #34495e;
+                    text-align: center;
+                    padding: 20px;
+                }
+                
+                .title h1 {
+                    font-size: 50px;
+                    color: #67fdfdb6;
+                    margin-bottom: 30px;
+                    margin-top: 30px;
+                }
+                .title p {
+                    padding: 10px;
+                    margin: 35px;
+                    color: antiquewhite;
+                    font-size: 15px;
+
+                }
+
+                /*This is the image slideshow section*/
+                
+                .slider {
+                    width: 100%;
+                    overflow: hidden;
+                
+                }
+
+                .slides {
+                    display: flex;
+                    transition: transform 1s ease-in-out;
+                    animation: slideAnimation 100s infinite; 
+                }
+
+                .slide {
+                    width: 100%;
+                    flex-shrink: 0;
+                }
+
+                .slide img {
+                    width: 100%;
+                    display: block;
+                    height: 350px;
+                    object-fit: cover;
+                }
+
+                @keyframes slideAnimation {
+                    0% { transform: translateX(0); }
+                    10% { transform: translateX(-100%); }
+                    20% { transform: translateX(-200%); }
+                    30% { transform: translateX(-300%); }
+                    40% { transform: translateX(-400%); }
+                    50% { transform: translateX(-500%); }
+                    60% { transform: translateX(-600%); }
+                    70% { transform: translateX(-700%); }
+                    80% { transform: translateX(-800%); }
+                    90% { transform: translateX(-900%); }
+                    100% { transform: translateX(0); }
+                }
+
+                /*This is the image gallery section*/
+                
+                .gallery {
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 20px;
+                    background-color: #F3F3E0;
+                }
+
+                .gallery .image-gallery {
+                    text-align: center;
+                    color: #0e306b;
+                    width: 20%;
+                }
+
+                .gallery .image-gallery img {
+                    width: 100%;
+                    border-radius: 10px;
+                }
+
+                /*This is the learn more buttons section*/
+                
+                .learn {
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 20px;
+                    background-color: #34495e;
+                }
+
+                .learn-more {
+                    text-align: center;
+                    width: 30%;
+                }
+
+                .learn-more img {
+                    width: 100%;
+                    border-radius: 10px;
+                }
+
+                .learn-more button {
+                    margin-top: 10px;
+                    padding: 10px 20px;
+                    background-color: #F3F3E0;
+                    color: #133E87;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, transform 0.2s ease; 
+                }
+
+                .learn-more button:hover {
+                    background-color: #12cebe;
+                    transform: scale(1.05);
+                }
+
+                /*This is the embedded video and map section*/
+                #youtube{
+                    width: 49%;
+                    height: 450px;
+                    padding: 5px;
+                    margin: 0;
+                    float: left;
+                    display: flex;
+
+                }
+                #map{
+                    width: 49%;
+                    height: 450px;
+                    padding: 5px;
+                    margin: 0;
+                    float: right;
+                    display: flex;
+                    border: none;
+                }
+
+                /*This is the footers section*/
+                
+                .footer {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    background-color: #34495e;
+                    color: #F3F3E0;
+                    padding: 20px;
+                    font-size: 0.9rem;
+                }
+
+                .footer-section {
+                    width: 30%;
+                    text-align: left;
+                }
+
+                .footer-section h3 {
+                    font-size: 1.2rem;
+                    margin-bottom: 10px;
+                }
+
+                .footer-section ul {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .footer-section ul li {
+                    margin-bottom: 8px;
+                }
+
+                .footer-section ul li a {
+                    color: #F3F3E0;
+                    text-decoration: none;
+                }
+
+                .footer-section ul li a:hover {
+                    text-decoration: underline;
+                    color: darkred;
+                }
+
+                .footer-section .social-icons img {
+                    width: 30px;
+                    height: 30px;
+                    margin: 0 5px 10px 0;
+                    display: inline-block;
+                }
+        </style>
+    </head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <div class="logo"> HealthSys </div>
+            <img src="heart-attack.png" alt="Logo" id="heart">
+        </div>
+            <nav>
+                <a href="#" class="nav-btn" onclick="home()">Home</a>
+                <a href="#" class="nav-btn" onclick="about()">About</a>
+                <a href="#" class="nav-btn" onclick="helps()">Help & Services</a>      
+                <a href="#" class="login-btn" onclick="login()" id="LogIn">LOG IN</a>
+            </nav>        
+    </header>
+
+    <section class="title">
+        <h1> Healthcare Management System </h1>
+        <p>Welcome to Healthcare Management System, 
+            your comprehensive solution for modern healthcare management. 
+            Our platform streamlines essential tasks like patient management, 
+            electronic health records, virtual prescriptions, 
+            appointment scheduling, and medical billing. 
+            Designed to enhance efficiency and improve patient care, 
+            our system empowers healthcare professionals to focus on what 
+            matters most—delivering quality care. Let us help you transform 
+            the way you manage healthcare today!</p>
+        
+            <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="x.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="s.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="d.jpeg" alt="Image 3"></div>
+                <div class="slide"><img src="f.jpeg" alt="Image 4"></div>
+                <div class="slide"><img src="g.jpg" alt="Image 5"></div>
+                <div class="slide"><img src="h.jpg" alt="Image 6"></div>
+                <div class="slide"><img src="j.jpg" alt="Image 7"></div>
+                <div class="slide"><img src="k.jpg" alt="Image 8"></div>
+                <div class="slide"><img src="l.jpg" alt="Image 9"></div>
+                <div class="slide"><img src="z.webp" alt="Image 10"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="image-gallery">
+            <img src="q.jpg" alt="Health Worker">
+            <h3>Female HealthWorker</h3>
+            <p>A female nurse is a woman professionally trained and licensed to provide healthcare support, 
+                including patient care, administering medications, monitoring health, 
+                and offering emotional assistance. She often serves as a bridge between doctors and patients, 
+                ensuring proper communication and understanding.</p>
+        </div>
+        
+        <div class="image-gallery">
+            <img src="w.jpg" alt="Health Worker">
+            <h3>Male HealthWorker</h3>
+            <p>A male doctor is a man who has completed medical education and training to diagnose, treat, 
+                and prevent illnesses. Male doctors may specialize in various fields, such as surgery, 
+                internal medicine, or pediatrics, and are responsible for prescribing medication, 
+                performing procedures, and leading healthcare teams.</p>
+        </div>
+        
+        <div class="image-gallery">
+            <img src="e.jpeg" alt="Health Worker">
+            <h3>Female HealthWorker</h3>
+            <p>A female doctor is a woman who has completed medical education and training to practice medicine. 
+                Like her male counterparts, she diagnoses and treats patients, prescribes medication, 
+                and may specialize in fields such as gynecology, cardiology, or general medicine, 
+                while balancing technical expertise with empathetic care.</p>
+        </div>
+        
+        <div class="image-gallery">
+            <img src="1.jpg" alt="Health Worker">
+            <h3>Male HealthWorker</h3>
+            <p>A male nurse is a man professionally trained and licensed to deliver nursing care. 
+                He performs similar duties to a female nurse, such as monitoring vitals, 
+                administering treatments, and assisting patients, while also contributing 
+                physical strength for tasks like patient transport or heavy lifting.</p>
+        </div>
+    </section>
+
+    <section class="learn">
+        <div class="learn-more">
+            <img src="h.jpg" alt="HealthCare Working">
+            <button onclick="learn()"> Learn More -> </button>
+        </div>
+        
+        <div class="learn-more">
+            <img src="k.jpg" alt="HealthCare Working">
+            <button onclick="learn()"> Learn More -></button>
+        </div>
+        
+        <div class="learn-more">
+            <img src="d.jpeg" alt="HealthCare Working">
+            <button onclick="learn()"> Learn More -></button>
+        </div>
+    </section>
+     
+    <section class="embedded">
+        <div class="map-loc">
+            <iframe src="https://www.youtube.com/embed/Le2WgrTrJ4k?si=ZeIHFC-MFAqs4aPo" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+            id="youtube">
+            </iframe>
+            
+    
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126276.44160886464!2d124.51761346249997!3d8.485882400000024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fff2dc53f7674b%3A0x4fc1745b04be0fbb!2sNorthern%20Mindanao%20Medical%20Center!5e0!3m2!1sen!2sph!4v1732685587682!5m2!1sen!2sph"
+             allowfullscreen="" 
+             loading="lazy" 
+             referrerpolicy="no-referrer-when-downgrade"
+             id="map">
+            </iframe>
+        </div>
+   </section>
+
+   <footer class="footer">
+    <div class="footer-section connect">
+        <h3>Connect with us</h3>
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter (1).png" alt="Twitter"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="tiktok.png" alt="TikTok"></a>
+        </div>
+        <p>
+            For inquiries, you may call our Contact Center at <b>(+63) 899-700-700</b>, 
+            or email us at <b>contact@healthsys.ph</b>.
+        </p>
+    </div>
+    <div class="footer-section subsidiaries">
+        <h3>Subsidiaries & Affiliates</h3>
+        <ul>
+            <li><a href="#">GengGeng Philippines</a></li>
+            <li><a href="#">Backburner Corp</a></li>
+            <li><a href="#">People Pleaser Foundation</a></li>
+            <li><a href="#">Chill Guy Management</a></li>
+            <li><a href="#">Insecurities Corp</a></li>
+        </ul>
+    </div>
+    <div class="footer-section site-links">
+        <h3>Site Links</h3>
+        <ul>
+            <li><a href="#">Privacy Notice</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About the Developer</a></li>
+        </ul>
+    </div>
+</footer>
+
+            <script>
+                function learn() {
+                    alert("The Learn More is Comng Soon. Just Stay updated!");
+                }
+
+                function login() {
+                        window.location.href = "dashboard.html";
+                }
+
+                function home(){
+                    window.location.href = "home.html";
+                }
+
+                function about(){
+                    window.location.href = "about.html";
+                }
+
+                function helps(){
+                    window.location.href = "helpServices.html";
+
+                }
+            </script>
+    
+</body>
+</html>
